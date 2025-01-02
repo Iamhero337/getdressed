@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> - ${{ product.price }}<br>
+                {{ product.description }}<br>
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
